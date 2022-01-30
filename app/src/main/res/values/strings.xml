@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Random Number app</string>
+    <color name="tableHead">#FEFEBE</color>
+</resources>
