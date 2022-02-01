@@ -2,6 +2,7 @@ package punyawat.randomnumberapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
@@ -11,8 +12,8 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var textView: TextView
     lateinit var editText: EditText
-    lateinit var resetbut: ImageButton
-    lateinit var okbut: ImageButton
+    lateinit var resetbut: Button
+    lateinit var okbut: Button
     lateinit var count: TextView
 
 
@@ -27,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         resetbut = findViewById(R.id.resetbut)
         okbut = findViewById(R.id.okbut)
         count = findViewById(R.id.count)
-        textView.text = "GUESS THE NUMBER 1-1000"
+        textView.text = "Hint For Weak"
 
         var x:Int = 0
         okbut.setOnClickListener {
@@ -64,15 +65,17 @@ class MainActivity : AppCompatActivity() {
         }
 
         resetbut.setOnClickListener {
-            var x:Int = 0
+            x = 0
             count.text=("count : $x")
+
             reset()
 
         }
     }
     fun reset() {
         random = nextInt(1,1000)
-        textView.text = "GUESS THE NUMBER 1-1000 (new number)"
+        textView.text = "GUESS THE NUMBER 1-1000"
+
         editText.text.clear()
     }
 }
